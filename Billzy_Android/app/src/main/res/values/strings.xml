@@ -5,7 +5,8 @@
     <string name="quantity">Quantity</string>
     <string name="enter_your_shop_name">Enter your Shop name</string>
     <string name="enter_your_recipient">Enter your Recipient name</string>
-    <string name="extra_cost">Extra cost</string>
-    <string name="grand_total">Grand Total</string>
+    <string name="extra_cost">Extra cost :</string>
+    <string name="grand_total">Grand Total :</string>
     <string name="select_date">Select Date</string>
+    <string name="change_date">CHANGE DATE</string>
 </resources>

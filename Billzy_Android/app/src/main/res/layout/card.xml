@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="1"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -28,7 +28,7 @@
         <EditText
             android:id="@+id/editTextTextPersonName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_bg"
@@ -37,24 +37,28 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             card_view:layout_constraintStart_toEndOf="@+id/textView"
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/fore_ground"
+            android:id="@+id/mCloseCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="@drawable/ic_baseline_close_24" />
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edit_text_bg"
@@ -63,14 +67,15 @@
             android:inputType="number"
             android:minHeight="48dp"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
@@ -80,6 +85,7 @@
             android:inputType="number"
             android:minHeight="48dp"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
             app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
@@ -87,8 +93,8 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/edit_text_bg"
@@ -97,16 +103,20 @@
             android:inputType="number"
             android:minHeight="48dp"
             android:padding="10dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/fore_ground"
+            android:id="@+id/addCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
