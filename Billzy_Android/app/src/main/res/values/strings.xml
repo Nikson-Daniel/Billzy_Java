@@ -9,4 +9,5 @@
     <string name="grand_total">Grand Total :</string>
     <string name="select_date">Select Date</string>
     <string name="change_date">CHANGE DATE</string>
+    <string name="add_item">Add Item</string>
 </resources>

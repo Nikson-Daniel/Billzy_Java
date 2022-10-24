@@ -1,126 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    card_view:cardCornerRadius="15dp">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@drawable/card_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/serialNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="1"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/productName"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
+            android:background="@drawable/card_item"
             android:ems="10"
             android:hint="@string/produc_name"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:minHeight="30dp"
+            android:padding="5dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            card_view:layout_constraintStart_toEndOf="@+id/textView"
+            android:textSize="16sp"
+            card_view:layout_constraintStart_toEndOf="@+id/serialNo"
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="@drawable/fore_ground"
             android:id="@+id/mCloseCard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/fore_ground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             card_view:srcCompat="@drawable/ic_baseline_close_24" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/mAmount"
             android:layout_width="90dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/edit_text_bg"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/card_item"
             android:ems="10"
             android:hint="@string/amount"
             android:inputType="number"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:minHeight="30dp"
+            android:textSize="16sp"
+            android:padding="5sp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/mQuantity"
             android:layout_width="90dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/edit_text_bg"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/card_item"
             android:ems="10"
             android:hint="@string/quantity"
             android:inputType="number"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:minHeight="30dp"
+            android:textSize="16sp"
+            android:padding="5dp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mTotalAmount"
+            app:layout_constraintStart_toEndOf="@+id/mAmount"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/mTotalAmount"
             android:layout_width="90dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:background="@drawable/edit_text_bg"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/card_item"
             android:ems="10"
             android:hint="0.00"
             android:inputType="number"
-            android:minHeight="48dp"
-            android:padding="10dp"
+            android:minHeight="30dp"
+            android:padding="5dp"
+            android:textSize="16sp"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-        <ImageView
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="@drawable/fore_ground"
-            android:id="@+id/addCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-            card_view:srcCompat="@drawable/ic_baseline_add_task_24" />
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
