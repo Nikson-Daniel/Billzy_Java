@@ -1,22 +1,20 @@
 package com.example.billzyandroid;
 
-import java.io.Serializable;
+public class ImageListClass {
 
-public class ModelClass implements Serializable {
-
-
+    private String serialNumber;
     private String mProductName;
     private String mAmount;
     private String mQuantity;
+    private String mTotal;
 
-
-    public ModelClass(String mProductName, String mAmount,String mQuantity) {
-
-        this.mProductName = mProductName;
-        this.mAmount = mAmount;
-        this.mQuantity = mQuantity;
+    public String getSerialNumber() {
+        return serialNumber;
     }
 
+    public void setSerialNumber(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
 
     public String getmProductName() {
         return mProductName;
@@ -41,6 +39,17 @@ public class ModelClass implements Serializable {
     public void setmQuantity(String mQuantity) {
         this.mQuantity = mQuantity;
     }
+
+    public String getmTotal() {
+        return mTotal;
+    }
+
+    public void setmTotal(String mTotal) {
+        this.mTotal = mTotal;
+    }
+
+
+
 
 
 }

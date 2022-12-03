@@ -1,22 +1,34 @@
 package com.example.billzyandroid;
 
+import static java.lang.Integer.parseInt;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import androidx.fragment.app.Fragment;
+
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewDebug;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 import com.example.billzyandroid.databinding.ActivityMainBinding;
+import com.example.billzyandroid.databinding.CardBinding;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -24,11 +36,22 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private int serialNo;
     RecyclerView recyclerView;
     LinearLayoutManager layoutManager;
     List<ModelClass> userList;
     Adapter adapter;
+    EditText qntity, amount;
+    int mQuantity, mAmount, mTotal;
+    int serialNo;
+    String mProductName;
+    private CardBinding cardBinding;
+    DataStructureClass storeClass;
+
+    public MainActivity(){
+
+        this.serialNo = -1;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        serialNo = 1;
 
-        initData();
+        storeClass = new DataStructureClass();
+        storeClass.initData();
+
+
         initRecyclerView();
-
-
 
         binding.mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,14 +83,29 @@ public class MainActivity extends AppCompatActivity {
         binding.add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addCard();
+                addCard(-5);
             }
         });
-    }
 
-    private void initData() {
-        userList = new ArrayList<>();
-        userList.add(new ModelClass(String.valueOf(serialNo),"", "", "",""));
+        binding.tlbr.mCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userList = adapter.userList;
+                System.out.println(userList.size());
+
+                if(userList.size() == 0){
+                    Toast.makeText(MainActivity.this, "You have to enter any values\n No values should be empty", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent(MainActivity.this, ImageShow.class);
+                    intent.putExtra("LIST", (Serializable) userList);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        cardBinding = CardBinding.inflate(getLayoutInflater());
+
     }
 
     private void initRecyclerView() {
@@ -75,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new Adapter(userList);
+        adapter = new Adapter(storeClass.userList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
@@ -101,9 +139,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void addCard(){
-        serialNo++;
-        userList.add(new ModelClass(String.valueOf(serialNo),"", "", "",""));
-        adapter.notifyItemChanged(serialNo);
+    public void addCard(int sno){
+        if(sno == -5){
+            adapter.userList.add(new ModelClass(null, null, null));
+            adapter.notifyItemChanged(serialNo);
+            serialNo++;
+            System.out.println(adapter.userList.get(0).getmProductName());
+        }
+
+        if (sno == -10){
+
+        }
+
     }
+
 }
