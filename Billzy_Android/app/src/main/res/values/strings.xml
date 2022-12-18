@@ -11,6 +11,22 @@
     <string name="change_date">CHANGE DATE</string>
     <string name="add_item">Add Item</string>
     <string name="total">Total</string>
+    <string name="no_date_selected">No Date Selected</string>
+    <string name="back_to_home">Back to home</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shop_name">Shop name</string>
+    <string name="recipient_name">Recipient name</string>
+    <string name="order_numbers">Order numbers :</string>
+    <string name="order_date">Order date :</string>
+    <string name="sno">S.No</string>
+    <string name="product_name_with">Product\nName</string>
+    <string name="download_bill">Download Bill</string>
+    <string name="about_us">About us</string>
+    <string name="terms_of_condition">Terms of services</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="version">Version 1.0.0</string>
+    <string name="billing_made">Billing Made Easier</string>
+    <string name="OpenDrawer">Open navigation drawer</string>
+    <string name="CloseDrawer">Close navigation drawer</string>
 </resources>

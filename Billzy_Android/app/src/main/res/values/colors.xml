@@ -10,4 +10,9 @@
     <color name="grey">#808080</color>
     <color name="red">#FF0000</color>
     <color name="blue">#ff6984</color>
+    <color name="major_color">#1EB1A6</color>
+    <color name="light_different_green">#96DED1</color>
+    <color name="card_color">#5F8575</color>
+    <color name="orange">#ffc40e</color>
+
 </resources>
